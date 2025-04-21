@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    justify-items: center;
+    list-style: none;
+}
+#about-me{
+    border: 1px solid black;
+    display: grid;
+    align-items: center;
+    gap: 10px;
+    grid-template-columns: 1fr 2fr;
+    max-width: 1000px;
+}
+#skills h2{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 10px;
+}
+#skills-list ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+#skills-list li{
+    border: 1px solid black;
+    font-size: 1.5rem;
+}
