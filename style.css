@@ -76,38 +76,60 @@ p {
     margin: 0.75rem;
 }
 
+/* Skill Cards and Animation */
+
+@property --angle{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+.skills-item-wrapper{
+    transition: 0.25s;
+}
+
 .skills-item {
     margin: 1rem;
     padding: 0.5rem;
     background-color: lightblue;
     border-radius: 1rem;
-    border: 3px solid black;
     height: 16rem;
-    transition: 0.25s;
     position: relative;
     background-image: linear-gradient(45deg, hwb(0 9% 17%), hsl(219, 59%, 52%));
 }
 
-.skills-item::after {
+.skills-item::after{
     content: '';
-    inset: 0;
+    z-index: -1;
+    inset: -4px;
     position: absolute;
-    outline: 1px solid #ffffff;
+    background-image: conic-gradient(from var(--angle), transparent 25%, lab(87.26% -1.82 81.07), lab(64.39% 51.98 49.83), hwb(278 24% 20%), rgb(47, 99, 196));
     border-radius: 1rem;
 }
-
 .skills-item::before {
     content: '';
-    inset: 0;
+    inset: -4px;
     position: absolute;
-    outline: 1px solid #ffffff;
-    outline-offset: 5px;
+    background-image: conic-gradient(from var(--angle), transparent 25%, lab(87.26% -1.82 81.07), lab(64.39% 51.98 49.83), hwb(278 24% 20%), rgb(47, 99, 196));
     border-radius: 1rem;
+    z-index: -2;
+    filter: blur(2rem);
 }
 
-.skills-item:hover {
+.skills-item-wrapper:hover{ 
     transform: translateY(-5px);
-    box-shadow: 0px 5px 5px #000000;
+}
+
+.skills-item:hover::before, .skills-item:hover::after{
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
 }
 
 /** PROJECTS **/
