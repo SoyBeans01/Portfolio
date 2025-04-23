@@ -6,14 +6,23 @@
     color: white;
     margin: 0;
     box-sizing: border-box;
-    justify-items: center;
     list-style: none;
     /*  background-color: hwb(205 6% 80%); */
 }
-
 body{
+    display: grid;
+    grid-template-areas: 
+        ". center contents";
+}
+.center{
+    grid-area: center;
     width: 100%;
     max-width: 1200px;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 /** ABOUT ME **/
@@ -35,6 +44,21 @@ body{
 .about-me-image-container img {
     object-fit: cover;
     height: 100%;
+}
+
+/* ASIDE */
+.contents{
+    grid-area: contents;
+    margin: 4rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 10rem;
+    float: right;
+    border: #000000 1px solid;
+}
+
+.contents-list ul{
+
 }
 
 /** SKILLS **/
